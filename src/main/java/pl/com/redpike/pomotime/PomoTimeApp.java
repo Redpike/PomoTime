@@ -21,6 +21,7 @@ public class PomoTimeApp extends Application {
         StackPane stackPane = new StackPane();
         stackPane.getChildren().add(button);
         primaryStage.setScene(new Scene(stackPane, PomoTimeConfig.APP_WIDTH, PomoTimeConfig.APP_HEIGHT));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 }
