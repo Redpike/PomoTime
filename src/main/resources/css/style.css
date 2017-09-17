@@ -1,0 +1,14 @@
+#mainContainer {
+    -fx-background-image: url("/images/background.jpg");
+    -fx-background-size: cover;
+}
+
+.container {
+    -fx-alignment: center;
+    -fx-padding: 7;
+}
+
+.text {
+    -fx-text-fill: #FFFFFF;
+    -fx-alignment: center;
+}
