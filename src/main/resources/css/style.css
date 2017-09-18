@@ -11,4 +11,28 @@
 .text {
     -fx-text-fill: #FFFFFF;
     -fx-alignment: center;
+    -fx-font-size: 14px;
+}
+
+.timer {
+    -fx-font-weight: 800;
+    -fx-font-style: italic;
+    -fx-font-size: 24px;
+}
+
+.container .button-container {
+    -fx-spacing: 8;
+}
+
+.button {
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #111111;
+}
+
+.button:hover {
+    -fx-background-color: rgba(17, 17, 17, 0.75);
+}
+
+.copyright-container .text {
+    -fx-font-style: italic;
 }

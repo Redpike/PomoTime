@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
 <?import pl.com.redpike.pomotime.model.StatusLabel?>
-
-<VBox stylesheets="/css/style.css"
+<VBox fx:id="mainContainer"
       styleClass="container"
-      xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="pl.com.redpike.pomotime.control.HomeViewController"
-      fx:id="mainContainer"
-      prefHeight="130.0" prefWidth="300.0">
+      stylesheets="/css/style.css"
+      xmlns="http://javafx.com/javafx/8.0.121"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="pl.com.redpike.pomotime.control.HomeViewController">
 
     <children>
         <StatusLabel fx:id="pomodoroStatusTitle" styleClass="text" text="Pomodoro is stopped"/>
 
-        <Label fx:id="time" styleClass="text" text="${controller.timerText}"/>
+        <Label fx:id="completedPomos" styleClass="text" text="${controller.completedPomodoro}"/>
+
+        <Label fx:id="time" styleClass="text,timer" style="-fx-font-size: 24px" text="${controller.timerText}"/>
 
         <HBox styleClass="container,button-container">
             <children>
@@ -30,7 +26,7 @@
                         <HBox styleClass="svg-container">
 
                         </HBox>
-                        <Button fx:id="startButton" onAction="#startPomodoro" text="Start"/>
+                        <Button fx:id="startButton" onAction="#startPomodoro" styleClass="button" text="Start"/>
                     </children>
                 </StackPane>
                 <StackPane styleClass="nested-action,stop">
@@ -38,7 +34,8 @@
                         <HBox styleClass="svg-container">
 
                         </HBox>
-                        <Button fx:id="stopButton" disable="true" onAction="#stopPomodoro" text="Stop"/>
+                        <Button fx:id="stopButton" disable="true" onAction="#stopPomodoro" styleClass="button"
+                                text="Stop"/>
                     </children>
                 </StackPane>
             </children>
@@ -52,7 +49,7 @@
                         <Image url="/images/avatar.jpg"/>
                     </image>
                 </ImageView>
-                <Label styleClass="copyright,text" text="Redpike ©2017 "/>
+                <Label styleClass="text" text="Redpike ©2017 "/>
             </children>
         </VBox>
     </children>

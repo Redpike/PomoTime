@@ -2,7 +2,7 @@ package pl.com.redpike.pomotime.config;
 
 public enum TimerStatusEnum {
     STOPPED("stopped"),
-    PAUSED("paused"),
+    BREAK("break"),
     RUNNING("running");
 
     private String statusName;

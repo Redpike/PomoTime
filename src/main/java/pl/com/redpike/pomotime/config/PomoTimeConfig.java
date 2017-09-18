@@ -11,7 +11,7 @@ public class PomoTimeConfig {
     public static final String APP_TITLE = "PomoTime";
     public static final String APP_ICON = "/images/icon/pomodoro.png";
     public static final Double APP_WIDTH = 350d;
-    public static final Double APP_HEIGHT = 150d;
+    public static final Double APP_HEIGHT = 180d;
     public static final Integer SECONDS = 60;
 
     /**

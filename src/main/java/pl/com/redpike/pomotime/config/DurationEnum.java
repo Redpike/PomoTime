@@ -1,9 +1,9 @@
 package pl.com.redpike.pomotime.config;
 
 public enum DurationEnum {
-    POMODORO("Pomodoro", 1),
-    SHORT_BREAK("Short break", 1),
-    LONG_BREAK("Long break", 2);
+    POMODORO("Pomodoro", 25),
+    SHORT_BREAK("Short break", 5),
+    LONG_BREAK("Long break", 15);
 
     private String statusName;
     private Integer duration;
