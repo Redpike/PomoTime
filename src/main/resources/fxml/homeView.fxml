@@ -19,14 +19,14 @@
     <Label fx:id="time" styleClass="text,timer" style="-fx-font-size: 32px" text="${controller.timerText}"/>
 
     <HBox styleClass="container,button-container">
-        <StackPane styleClass="nested-action,start">
-            <HBox styleClass="svg-container">
+        <StackPane>
+            <HBox>
 
             </HBox>
             <Button fx:id="startButton" onAction="#startPomodoro" styleClass="button" text="Start"/>
         </StackPane>
-        <StackPane styleClass="nested-action,stop">
-            <HBox styleClass="svg-container">
+        <StackPane>
+            <HBox>
 
             </HBox>
             <Button fx:id="stopButton" disable="true" onAction="#stopPomodoro" styleClass="button"
@@ -36,7 +36,7 @@
 
 
     <VBox styleClass="container,copyright-container">
-        <ImageView styleClass="copyright,image">
+        <ImageView styleClass="copyright-image">
             <Image url="/images/avatar.jpg"/>
         </ImageView>
         <Label styleClass="text" text="Redpike ©2017 "/>
