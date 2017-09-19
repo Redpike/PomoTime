@@ -1,8 +1,11 @@
-This is application written in JavaFX with Gradle for Pomodoro Technique users.
+##This is application written in JavaFX with Gradle for Pomodoro Technique users.
 
-Current version: 0.1.0-SNAPSHOT
+##Current version: 0.1.0
 
-Default timer settings:
-* Pomodoro - 25 minutes,
-* Short break - 5 minutes,
-* Long break - 15 minutes.
+##Requirements:
+- Java 8
+
+##Default timer settings:
+- Pomodoro - 25 minutes,
+- Short break - 5 minutes,
+- Long break - 15 minutes.
