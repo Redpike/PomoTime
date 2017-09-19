@@ -9,13 +9,15 @@ import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import pl.com.redpike.pomotime.config.DurationEnum;
 import pl.com.redpike.pomotime.model.PomoStatus;
 import pl.com.redpike.pomotime.model.StatusLabel;
 
 import static pl.com.redpike.pomotime.config.DurationEnum.*;
-import static pl.com.redpike.pomotime.config.PomoTimeConfig.SECONDS;
+import static pl.com.redpike.pomotime.config.PomoTimeConfig.*;
 import static pl.com.redpike.pomotime.config.TimerStatusEnum.*;
 
 /**
@@ -35,6 +37,9 @@ public class HomeViewController {
     @FXML
     private Button stopButton;
 
+    private final Media bellSound;
+    private final Media crankSound;
+    private MediaPlayer mediaPlayer;
     private StringProperty timerText;
     private IntegerProperty completedPomodoro;
     private Timeline timeline;
@@ -45,6 +50,8 @@ public class HomeViewController {
     public HomeViewController() {
         this.timerText = new SimpleStringProperty();
         this.completedPomodoro = new SimpleIntegerProperty();
+        this.bellSound = new Media(getClass().getResource(BELL_PATH).toString());
+        this.crankSound = new Media(getClass().getResource(CRANK_PATH).toString());
 
         initStatus();
         initTimeline();
@@ -55,6 +62,8 @@ public class HomeViewController {
         pomodoroStatusTitle.setStatusText(pomoStatus.getReadableStatus());
         startButton.setDisable(true);
         stopButton.setDisable(false);
+        mediaPlayer = new MediaPlayer(crankSound);
+        mediaPlayer.play();
         timeline.play();
     }
 
@@ -102,6 +111,9 @@ public class HomeViewController {
     }
 
     private void setNextTimerStatus() {
+        mediaPlayer = new MediaPlayer(bellSound);
+        mediaPlayer.play();
+
         if (completedPomodoro.get() % 4 != 0 && pomoStatus.getTimerStatus() != BREAK) {
             pomoStatus.setTimerStatus(BREAK);
             duration = SHORT_BREAK.getDuration() * SECONDS;

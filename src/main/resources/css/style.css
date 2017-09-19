@@ -17,7 +17,7 @@
 .timer {
     -fx-font-weight: 800;
     -fx-font-style: italic;
-    -fx-font-size: 24px;
+    -fx-font-size: 32px;
 }
 
 .container .button-container {

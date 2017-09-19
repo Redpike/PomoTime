@@ -4,7 +4,7 @@ import javafx.scene.control.Label;
 
 public class StatusLabel extends Label {
 
-    private static final String STATUS_PREFIX = "Pomodoro is ";
+    private static final String STATUS_PREFIX = "PomoTime is ";
 
     public void setStatusText(String text) {
         setText(STATUS_PREFIX + text);
