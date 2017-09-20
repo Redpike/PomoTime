@@ -11,7 +11,7 @@ buildscript {
 }
 
 group 'pl.com.redpike'
-version '0.1.0-SNAPSHOT'
+version '0.1.1'
 
 apply plugin: 'java'
 apply plugin: 'javafx-gradle-plugin'
@@ -33,7 +33,7 @@ jfx {
     verbose = true
     mainClass = "pl.com.redpike.pomotime.PomoTimeApp"
     jfxAppOutputDir = "build/jfx/app"
-    jfxMainAppJarName = "PomoTime.jar"
+    jfxMainAppJarName = "PomoTime-${version}.jar"
     deployDir = "src/main/deploy"
     useEnvironmentRelativeExecutables = true
     libFolderName = "lib"
@@ -59,14 +59,14 @@ jfx {
     jvmArgs = null // List<String>
     userJvmArgs = null // Map<String, String>
     launcherArguments = null // List<String>
-    nativeReleaseVersion = "0.1.0"
+    nativeReleaseVersion = "0.1.1"
     needShortcut = false
     needMenu = false
     bundleArguments = [
             // dont bundle JRE (not recommended, but increases build-size/-speed)
             runtime: null
     ]
-    appName = "PomoTime" // this is used for files below "src/main/deploy", e.g. "src/main/deploy/windows/project.ico"
+    appName = "PomoTime-${nativeReleaseVersion}" // this is used for files below "src/main/deploy", e.g. "src/main/deploy/windows/project.ico"
     additionalBundlerResources = null // path to some additional resources for the bundlers when creating application-bundle
     additionalAppResources = null // path to some additional resources when creating application-bundle
     secondaryLaunchers = [[appName:"somethingDifferent"], [appName:"somethingDifferent2"]]
