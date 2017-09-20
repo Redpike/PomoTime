@@ -99,6 +99,7 @@ public class HomeViewController {
             countCompletedPomodoros();
             setNextTimerStatus();
             setTimerText(duration);
+            timeline.setCycleCount(duration);
             timeline.play();
         });
     }
